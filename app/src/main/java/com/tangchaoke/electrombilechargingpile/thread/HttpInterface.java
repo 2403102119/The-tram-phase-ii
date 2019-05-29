@@ -529,24 +529,10 @@ App9<<修改城市
         }
     }
     /*电站列表*/
-    public void getElectricPileList(String letLat,String letLng,String rightLat,String rightLng,
-                                    String lat,String lng,String lacation, String state,
-                                    String priority,MApiResultCallback callback) {
-        UserClient userClient = new UserClient(UriUtil.ip_getElectricPileList);
+    public void getElectricPileList(String loweRrightCorner,String loweRrightCorner1,String topleftcorner,String topleftcorner1,String userCoordinates,String userCoordinates1,String roomType,String distance,String amountType,MApiResultCallback callback) {
+        UserClient userClient = new UserClient(UriUtil.ip_getElectricPileList+loweRrightCorner+loweRrightCorner1+topleftcorner+topleftcorner1+userCoordinates+userCoordinates1+roomType+distance+amountType);
         try {
-            //传参数
-            userClient.AddParam("letLat", letLat);
-            userClient.AddParam("letLng", letLng);
-            userClient.AddParam("rightLat", rightLat);
-            userClient.AddParam("rightLng", rightLng);
-            userClient.AddParam("lat", lat);
-            userClient.AddParam("lng", lng);
-            userClient.AddParam("lacation", lacation);
-            userClient.AddParam("state", state);
-            userClient.AddParam("priority", priority);
-//            userClient.AddParam("token", App.token);
 
-//            userClient.addJson(json);
             userClient.addRequestType(UserClient.RequestMethod.GET);
             userClient.executePost(callback, null, context);
         } catch (Exception e) {

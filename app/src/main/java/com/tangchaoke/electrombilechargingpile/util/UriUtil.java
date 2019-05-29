@@ -104,7 +104,7 @@ public class UriUtil {
     //账户明细
     public static String ip_zhanghumingxi=ip2+"pay/getBalanceRecordList?page=";
     //电站列表
-    public static String ip_getElectricPileList=ip2+"charge/place/list/";
+    public static String ip_getElectricPileList=ip2+"charge/place/list/?";
     //首页搜索
     public static String ip_getChargePlace=ip2+"chargePlace/title/";
 

@@ -71,6 +71,7 @@ import com.tangchaoke.electrombilechargingpile.view.ClearEditText;
 import com.tangchaoke.electrombilechargingpile.view.MyMarkerRoundProcess;
 import com.tangchaoke.electrombilechargingpile.view.NiceRecyclerView;
 import com.tangchaoke.electrombilechargingpile.view.RatingBar;
+import com.tangchaoke.electrombilechargingpile.zxing.decoding.Intents;
 
 import org.json.JSONArray;
 
@@ -513,8 +514,57 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
         Point bottomPoint=new Point(x,(y+height));
         LatLng topLatLng= aMap.getProjection().fromScreenLocation(topPoint);
         LatLng bottomLatLng= aMap.getProjection().fromScreenLocation(bottomPoint);
-        getElectricPileList(bottomLatLng.latitude+"",bottomLatLng.longitude+"",topLatLng.latitude+"",
-                topLatLng.longitude+"",latitude+"",longitude+"",weiZhiStr,zhuangTaiStr,paiXuStr);
+
+
+        List<String> list=new ArrayList<>();
+        list.add(bottomLatLng.latitude+"");
+        list.add(bottomLatLng.longitude+"");
+
+        List<String> list1=new ArrayList<>();
+        list1.add(topLatLng.latitude+"");
+        list1.add(topLatLng.longitude+"");
+
+        List<String> list2 = new ArrayList<>();
+        list2.add(latitude+"");
+        list2.add(longitude+"");
+
+        Map<String,Object> map=new HashMap<>();
+        map.put("amountType",paiXuStr);
+        map.put("roomType",weiZhiStr);
+        map.put("distance",paiXuStr);
+        map.put("loweRrightCorner",list);
+        map.put("topleftcorner",list1);
+        map.put("userCoordinates",list2);
+        String json = StringUtil.map2Json(map);
+
+        String loweRrightCorner ="loweRrightCorner="+bottomLatLng.latitude;
+        String loweRrightCorner1 ="&loweRrightCorner="+bottomLatLng.longitude;
+        String topleftcorner ="&topleftcorner="+topLatLng.latitude;
+        String topleftcorner1 ="&topleftcorner="+topLatLng.longitude;
+        String userCoordinates ="&userCoordinates="+latitude;
+        String userCoordinates1 ="&userCoordinates="+longitude;
+        String roomType ="";
+        String distance = "";
+        String amountType ="";
+        if (weiZhiStr.equals("")){
+            roomType ="";
+        }else {
+            roomType ="&roomType="+weiZhiStr;
+        }
+        if (null!=paiXuStr&&paiXuStr.equals("2")){
+            distance="&distance=2";
+        }else if (null!=paiXuStr&&paiXuStr.equals("1")){
+            amountType="&amountType=1";
+        }else {
+            amountType="";
+            distance="";
+        }
+
+
+
+        getElectricPileList(loweRrightCorner,loweRrightCorner1,topleftcorner,topleftcorner1,userCoordinates,userCoordinates1,roomType,distance,amountType);
+//        getElectricPileList(bottomLatLng.latitude+"",bottomLatLng.longitude+"",topLatLng.latitude+"",
+//                topLatLng.longitude+"",latitude+"",longitude+"",weiZhiStr,zhuangTaiStr,paiXuStr);
     }
 
     @Override
@@ -579,7 +629,7 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
                 weizhiBoo = false;
                 tv_store_juli.setTextColor(ContextCompat.getColor(getActivity(), R.color.main_yellow));
                 tv_store_jiage.setTextColor(ContextCompat.getColor(getActivity(), R.color.nomalText));
-                paiXuStr="A";
+                paiXuStr="1";
                 getData();
                 break;
             case R.id.ll_store_jiage://价格优先
@@ -589,7 +639,7 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
                 weizhiBoo = false;
                 tv_store_jiage.setTextColor(ContextCompat.getColor(getActivity(), R.color.main_yellow));
                 tv_store_juli.setTextColor(ContextCompat.getColor(getActivity(), R.color.nomalText));
-                paiXuStr="B";
+                paiXuStr="2";
                 getData();
                 break;
             case R.id.view_location://
@@ -938,75 +988,76 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
     }
 
     /**获得充电桩列表*/
-    private void getElectricPileList(final String letLat, final String letLng, final String rightLat,
-                                     final String rightLng, final String lat, final String lng,
-                                     final String lacation, final String state, final String priority){
+    private void getElectricPileList(final String loweRrightCorner,final String loweRrightCorner1,
+                                     final String topleftcorner,final String topleftcorner1,
+                                     final String userCoordinates,final String userCoordinates1,
+                                     final String roomType,final String distance,
+                                     final String amountType){
         if (NetUtil.isNetWorking(getActivity())){
             ThreadPoolManager.getInstance().getNetThreadPool().execute(new Runnable() {
                 @Override
                 public void run() {
-                    httpInterface.getElectricPileList(letLat,letLng,rightLat,rightLng,
-                            lat,lng,lacation,state,priority ,new MApiResultCallback() {
+                    httpInterface.getElectricPileList(loweRrightCorner,loweRrightCorner1,topleftcorner,topleftcorner1,userCoordinates,userCoordinates1,roomType,distance,amountType,new MApiResultCallback() {
                         @Override
                         public void onSuccess(String result) {
-                            dataList =new Gson().fromJson(result, Bean.ElectricPileListModel.class);
-//                            mMapView.removeAllViews();
-                            if (dataList.status==1){
-                                if(isMaps) {
-                                    removeAllMakers();
-                                    pileMap.clear();
-                                }
-                                pileListData.clear();
-                                for (int i = 0; i < dataList.list.size(); i++) {
-                                    if(isMaps) {
-                                        LatLng latLng = new LatLng(Double.parseDouble(dataList.list.get(i).lat), Double.parseDouble(dataList.list.get(i).lng));
-                                        final MarkerOptions option = new MarkerOptions();
-                                        option.position(latLng);
-//                                        ArrayList<BitmapDescriptor> giflist = new ArrayList<>();
-//                                        giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.logo_round));
-//                                        giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_dingwei));
-                                        View v=LayoutInflater.from(getActivity()).inflate(R.layout.item_marker,null);
-                                        MyMarkerRoundProcess rp=v.findViewById(R.id.rp);
-                                        float totalQuantity=dataList.list.get(i).socketNum;
-                                        float leisureNum=dataList.list.get(i).socketLeisurenum;
-                                        float employNum=dataList.list.get(i).socketUsenum;
-                                        rp.setProgress((int)((leisureNum/totalQuantity)*100));
-                                        rp.setProgress2((int)((employNum/totalQuantity)*100));
-
-                                        BitmapDescriptor bitmapDescriptor=BitmapDescriptorFactory.fromView(v);
-//                                        option.icons(giflist);
-                                        option.icon(bitmapDescriptor);
-                                        option.draggable(true);
-                                        Marker marker = aMap.addMarker(option);
-                                        makerList.add(marker);
-                                        pileMap.put(marker.getId(), dataList.list.get(i));
-                                    }
-                                    Map<String, Object> map=new HashMap<>();
-                                    map.put("oid",dataList.list.get(i).oid);
-                                    map.put("socketNum",dataList.list.get(i).socketNum);
-                                    map.put("socketAbnormalnum",dataList.list.get(i).socketAbnormalnum);
-                                    map.put("socketLeisurenum",dataList.list.get(i).socketLeisurenum);
-                                    map.put("socketUsenum",dataList.list.get(i).socketUsenum);
-                                    map.put("image",dataList.list.get(i).image);
-                                    map.put("address",dataList.list.get(i).address);
-                                    map.put("lng",dataList.list.get(i).lng);
-                                    map.put("distance",dataList.list.get(i).distance);
-                                    map.put("powerRange",dataList.list.get(i).powerRange);
-                                    map.put("businessHours",dataList.list.get(i).businessHours);
-                                    map.put("title",dataList.list.get(i).title);
-                                    map.put("NsocketLeisurenum",dataList.list.get(i).NsocketLeisurenum);
-                                    map.put("NsocketNum",dataList.list.get(i).NsocketNum);
-                                    map.put("WsocketNum",dataList.list.get(i).WsocketNum);
-                                    map.put("WsocketLeisurenum",dataList.list.get(i).WsocketLeisurenum);
-                                    map.put("lat",dataList.list.get(i).lat);
-                                    map.put("distance",dataList.list.get(i).distance);
-                                    pileListData.add(map);
-                                }
-                                pileListAdapter.notifyDataSetChanged();
-
-                            }else {
-                                toToast(dataList.message);
-                            }
+//                            dataList =new Gson().fromJson(result, Bean.ElectricPileListModel.class);
+////                            mMapView.removeAllViews();
+//                            if (dataList.status==1){
+//                                if(isMaps) {
+//                                    removeAllMakers();
+//                                    pileMap.clear();
+//                                }
+//                                pileListData.clear();
+//                                for (int i = 0; i < dataList.list.size(); i++) {
+//                                    if(isMaps) {
+//                                        LatLng latLng = new LatLng(Double.parseDouble(dataList.list.get(i).lat), Double.parseDouble(dataList.list.get(i).lng));
+//                                        final MarkerOptions option = new MarkerOptions();
+//                                        option.position(latLng);
+////                                        ArrayList<BitmapDescriptor> giflist = new ArrayList<>();
+////                                        giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.logo_round));
+////                                        giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_dingwei));
+//                                        View v=LayoutInflater.from(getActivity()).inflate(R.layout.item_marker,null);
+//                                        MyMarkerRoundProcess rp=v.findViewById(R.id.rp);
+//                                        float totalQuantity=dataList.list.get(i).socketNum;
+//                                        float leisureNum=dataList.list.get(i).socketLeisurenum;
+//                                        float employNum=dataList.list.get(i).socketUsenum;
+//                                        rp.setProgress((int)((leisureNum/totalQuantity)*100));
+//                                        rp.setProgress2((int)((employNum/totalQuantity)*100));
+//
+//                                        BitmapDescriptor bitmapDescriptor=BitmapDescriptorFactory.fromView(v);
+////                                        option.icons(giflist);
+//                                        option.icon(bitmapDescriptor);
+//                                        option.draggable(true);
+//                                        Marker marker = aMap.addMarker(option);
+//                                        makerList.add(marker);
+//                                        pileMap.put(marker.getId(), dataList.list.get(i));
+//                                    }
+//                                    Map<String, Object> map=new HashMap<>();
+//                                    map.put("oid",dataList.list.get(i).oid);
+//                                    map.put("socketNum",dataList.list.get(i).socketNum);
+//                                    map.put("socketAbnormalnum",dataList.list.get(i).socketAbnormalnum);
+//                                    map.put("socketLeisurenum",dataList.list.get(i).socketLeisurenum);
+//                                    map.put("socketUsenum",dataList.list.get(i).socketUsenum);
+//                                    map.put("image",dataList.list.get(i).image);
+//                                    map.put("address",dataList.list.get(i).address);
+//                                    map.put("lng",dataList.list.get(i).lng);
+//                                    map.put("distance",dataList.list.get(i).distance);
+//                                    map.put("powerRange",dataList.list.get(i).powerRange);
+//                                    map.put("businessHours",dataList.list.get(i).businessHours);
+//                                    map.put("title",dataList.list.get(i).title);
+//                                    map.put("NsocketLeisurenum",dataList.list.get(i).NsocketLeisurenum);
+//                                    map.put("NsocketNum",dataList.list.get(i).NsocketNum);
+//                                    map.put("WsocketNum",dataList.list.get(i).WsocketNum);
+//                                    map.put("WsocketLeisurenum",dataList.list.get(i).WsocketLeisurenum);
+//                                    map.put("lat",dataList.list.get(i).lat);
+//                                    map.put("distance",dataList.list.get(i).distance);
+//                                    pileListData.add(map);
+//                                }
+//                                pileListAdapter.notifyDataSetChanged();
+//
+//                            }else {
+//                                toToast(dataList.message);
+//                            }
                         }
 
                         @Override
