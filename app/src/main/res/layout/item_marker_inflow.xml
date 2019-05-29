@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:ignore="NestedWeights,RtlHardcoded,SmallSp,ContentDescription,HardcodedText" >
+
+    <LinearLayout
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/ic_marker_background"
+        android:orientation="horizontal"
+        android:paddingBottom="11dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:paddingTop="1dp">
+
+        <LinearLayout
+            android:id="@+id/ll_luxian"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_padding_green_left_5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_marker_luxina"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:id="@+id/juli"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_xiangqing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_padding_white_right_5"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:id="@+id/pileName"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.tangchaoke.electrombilechargingpile.view.RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:stepSize="1"
+                    android:visibility="gone"
+                    app:starCount="5"
+                    app:starEmpty="@mipmap/ic_rationgbar_no"
+                    app:starFill="@mipmap/ic_rationgbar_yes"
+                    app:starImageSize="11dp"
+                    app:starPadding="3dp"
+                    app:starStep="0"
+                    android:id="@+id/pingfen"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/hintColor"
+                    android:textSize="10sp"
+                    android:id="@+id/price"/>
+
+                <TextView
+                    android:id="@+id/tv_business_time"
+                    android:textColor="@color/hintColor"
+                    android:layout_marginRight="7dp"
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_padding_red_10"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="内"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="空闲0/共0"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/quickCount"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_padding_yellow_10"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="外"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="空闲0/共0"
+                    android:singleLine="true"
+                    android:ellipsize="middle"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/slowCount"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

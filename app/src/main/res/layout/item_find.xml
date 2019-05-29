@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:background="@drawable/press_white_gray_change"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_find_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_figure_details"/>
+
+    <TextView
+        android:id="@+id/tv_find_name"
+        android:layout_toRightOf="@id/img_find_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="果唯伊水果超市"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_find_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_add_dingwei"/>
+
+        <TextView
+            android:id="@+id/tv_find_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="500 米"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_find_address"
+        android:layout_toRightOf="@id/img_find_icon"
+        android:layout_toLeftOf="@id/rl_find_distance"
+        android:layout_marginRight="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_find_icon"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/hintColor"
+        android:text="河南省郑州市金水区东风路街道"/>
+
+</RelativeLayout>

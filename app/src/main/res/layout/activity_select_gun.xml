@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGrey"
+    android:orientation="vertical"
+    tools:context="com.tangchaoke.electrombilechargingpile.activity.SelectGunActivity">
+
+    <LinearLayout
+        android:id="@+id/A_gun"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A枪  (未插枪，空闲)"
+            android:textColor="@color/nomalText"
+            android:textSize="13sp"
+            android:id="@+id/A_gun_TX"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="√"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:id="@+id/ok_1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/B_gun"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="B枪  (未插枪，空闲)"
+            android:textColor="@color/nomalText"
+            android:textSize="13sp"
+            android:id="@+id/B_gun_TX"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="√"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:id="@+id/ok_2"/>
+
+    </LinearLayout>
+</LinearLayout>

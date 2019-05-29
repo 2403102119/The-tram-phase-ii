@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/shape_padding_white_18">
+
+        <com.tangchaoke.electrombilechargingpile.view.ClearEditText
+            android:id="@+id/cet_input_code"
+            android:layout_width="200dp"
+            android:background="@drawable/rect_stroke_gray_20"
+            android:hint="请输入编码"
+            android:gravity="center"
+            android:inputType="textVisiblePassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/btn_begin_charging"
+            android:layout_width="220dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="30dp"
+            android:text="开始充电"
+            android:textSize="20sp"
+            android:background="@drawable/shape_padding_yellow_25"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

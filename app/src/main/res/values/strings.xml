@@ -1,0 +1,48 @@
+<resources>
+    <string name="appName">瓦能</string>
+
+    <string name="unknown_error_toast">服务器异常，请稍后重试</string>
+    <string name="connect_failed_toast">服务器开小差了，请稍后再试!</string>
+    <string name="connect_timeout">系统繁忙，稍后重试</string>
+    <string name="system_busy">请求超时，请检查您的网络</string>
+    <string name="third_upload_fail">第三方上传失败，请稍后重试</string>
+    <string name="download_fail">下载失败，请稍后重试</string>
+    <string name="user_logout">您的账号已在别处登录，请重新登录</string>
+    <string name="msg_send_fail">发送消息失败，系统网络异常</string>
+    <string name="msg_delete_fail">消息删除失败，系统网络异常</string>
+    <string name="rong_response_405">(rong)您在对方黑名单中</string>
+    <string name="rong_response_22406">(rong)您不在当前群组中，暂无法发送消息</string>
+    <string name="rong_response_30001">(rong)Token错误，通讯中断</string>
+    <string name="rong_response_30002">(rong)网络连接不可用</string>
+    <string name="rong_response_30003">(rong)信令通讯中，ACK超时</string>
+    <string name="rong_response_30004">(rong)网络通讯中，HTTP发送超时</string>
+    <string name="rong_response_30005">(rong)网络通讯中，HTTP请求超时</string>
+    <string name="rong_response_30007">(rong)网络请求错误</string>
+    <string name="rong_response_30008">(rong)您当前网络可能被劫持，发送消息失败</string>
+    <string name="rong_response_30011">(rong)网络连接中断</string>
+    <string name="rong_response_30014">(rong)信息发送失败</string>
+    <string name="rong_response_31000">(rong)网络连接时，ACK超时</string>
+    <string name="rong_response_31001">(rong)协议参数错误</string>
+    <string name="rong_response_31002">(rong)参数错误，请重新配置KEY</string>
+    <string name="rong_response_31003">(rong)服务不可用</string>
+    <string name="rong_response_31004">(rong)用户名或密码错误</string>
+    <string name="rong_response_31007">(rong)您的当前包名与注册包名不一致</string>
+    <string name="rong_response_31008">(rong)APP被屏蔽/删除/不存在</string>
+    <string name="rong_response_31009">(rong)当前用户被屏蔽</string>
+    <string name="rong_response_31010">(rong)您已在其他设备登录</string>
+    <string name="rong_response_33001">(rong)请首先调用init在进行连接</string>
+    <string name="rong_response_33002">(rong)数据库错误</string>
+    <string name="rong_response_33003">(rong)传入参数无效</string>
+    <string name="rong_response_33005">(rong)重新连接成功</string>
+    <string name="rong_response_33006">(rong)连接中，请不要再次调用connect</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+
+    <string name="located_city">当前城市</string>
+    <string name="hot_city">热门城市</string>
+    <string name="locating">正在定位…</string>
+    <string name="located_failed">定位失败</string>
+    <string name="number_letters">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+</resources>

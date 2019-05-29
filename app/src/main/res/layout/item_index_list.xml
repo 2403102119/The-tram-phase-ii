@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/press_white_gray_change"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/item_img"
+            android:scaleType="centerCrop"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="天津市河西区才华里小区充电站"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:id="@+id/title"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="天津市河西区体北道才华里小区14号楼前"
+                    android:textColor="@color/hintColor"
+                    android:textSize="11sp"
+                    android:id="@+id/address"
+                    android:maxLength="20"
+                    android:maxLines="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5km"
+                    android:textColor="@color/hintColor"
+                    android:textSize="9sp"
+                    android:id="@+id/juli"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_index_dian"
+                    android:drawablePadding="10dp"
+                    android:text="充电单价：0.40元/度"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/price"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/ic_index_dian"
+                    android:drawablePadding="10dp"
+                    android:text="车位空闲状态：已满"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/parking"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_index_dian"
+                    android:drawablePadding="10dp"
+                    android:text="停车费：免费"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/parkdingPrice"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_index_dian"
+                    android:drawablePadding="10dp"
+                    android:text="开放时间段：24小时"
+                    android:textColor="@color/nomalText"
+                    android:textSize="11sp"
+                    android:id="@+id/parkingTime"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.tangchaoke.electrombilechargingpile.view.ClearEditText
+        android:id="@+id/words"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sc_editselector_city_select"
+        android:drawableLeft="@mipmap/ic_sousuo"
+        android:gravity="center_vertical"
+        android:hint="请输入城市中文名称或小写拼音"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="#333333"
+        android:textColorHint="#666666"
+        android:textSize="13sp"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="取消"-->
+        <!--android:layout_toRightOf="@+id/words"/>-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#50666666" />
+</LinearLayout>

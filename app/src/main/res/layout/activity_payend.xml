@@ -1,0 +1,161 @@
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mySmart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGrey"
+    tools:context="com.tangchaoke.electrombilechargingpile.fragment.MeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:id="@+id/ed_user">
+
+            <com.tangchaoke.electrombilechargingpile.view.MLImageView
+                android:layout_width="80dp"
+                android:layout_height="84dp"
+                app:radius="10dp"
+                app:shape_type="round"
+                android:src="@mipmap/ic_tixian_submit"/>
+
+            <TextView
+                android:id="@+id/tv_me_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="一个有个性的名字"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="150.50"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:id="@+id/me_balance"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="账户余额"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:id="@+id/no_user">
+
+            <com.tangchaoke.electrombilechargingpile.view.MLImageView
+                android:id="@+id/iv_my_head1"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:src="@mipmap/ic_tixian_submit"
+                app:radius="10dp"
+                app:shape_type="round"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="250.00元"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:id="@+id/balance_pay"/>
+
+        </LinearLayout>
+
+        <!--开始时间-->
+        <LinearLayout
+            android:id="@+id/ll_GeRenZhongXin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="开始时间"
+                android:textColor="@color/nomalText"
+                android:textSize="16sp"
+                android:id="@+id/sta_time"/>
+
+        </LinearLayout>
+
+        <!--结束时间-->
+        <LinearLayout
+            android:id="@+id/ll_ZhangHuMingXi"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="结束时间"
+                android:textColor="@color/nomalText"
+                android:textSize="16sp"
+                android:id="@+id/end_time"/>
+
+        </LinearLayout>
+
+        <!--充电度数-->
+        <LinearLayout
+            android:id="@+id/ll_WoDeDingDan"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="充电时长"
+                android:textColor="@color/nomalText"
+                android:textSize="16sp"
+                android:id="@+id/dushu"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

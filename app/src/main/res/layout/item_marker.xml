@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="NestedWeights,RtlHardcoded,SmallSp,ContentDescription,HardcodedText">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="39dp"
+        android:src="@mipmap/ic_add_dingwei"/>
+    <com.tangchaoke.electrombilechargingpile.view.MyMarkerRoundProcess
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:roundColor2="@color/hintColor"
+        app:roundProgressColor2="@color/green2"
+        app:roundProgressColor3="@color/red"
+        app:textColors2="@color/transparent"
+        app:circleWidth2="4dp"
+        android:id="@+id/rp"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        android:src="@mipmap/logo_round"
+        android:padding="4.3dp"/>
+
+
+</RelativeLayout>

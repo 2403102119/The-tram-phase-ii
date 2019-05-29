@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGrey"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.tangchaoke.electrombilechargingpile.activity.EvaluationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请打分："
+                android:textColor="@color/nomalText"
+                android:textSize="15sp" />
+
+            <com.tangchaoke.electrombilechargingpile.view.RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:stepSize="1"
+                app:starCount="5"
+                app:starEmpty="@mipmap/ic_rationgbar_no"
+                app:starFill="@mipmap/ic_rationgbar_yes"
+                app:starImageSize="16dp"
+                app:starPadding="10dp"
+                app:starStep="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="充电桩使用过程、服务、环境如何，跟大家分享一下吧"
+            android:textColor="@color/nomalText"
+            android:textColorHint="@color/hintColor"
+            android:textSize="13sp"
+            android:id="@+id/content"/>
+
+        <com.tangchaoke.electrombilechargingpile.view.NiceRecyclerView
+            android:id="@+id/pictureList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:gridNum="5"
+            app:listDirection="HORIZONTAL" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/green"
+        android:text="确认并发布"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:id="@+id/fabu"/>
+</LinearLayout>

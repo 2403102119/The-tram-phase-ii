@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backGrey"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/backGrey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/press_white_gray_change"
+                android:orientation="vertical"
+                android:id="@+id/toDZXQ"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:id="@+id/dz_name"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray"
+                    android:id="@+id/toIcon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_padding_red_10"
+                    android:layout_toLeftOf="@id/toIcon"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingTop="2dp"
+                    android:text="内"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:id="@+id/type_power"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/toIcon">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_padding_green_10"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:visibility="gone"
+                        android:text="空闲"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:id="@+id/re_now"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="电桩编号："
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/cd_jk"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="充\t电\t位："
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/ServerAmount"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="功\t\t\t\t率："
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/gl_text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="电\t\t\t\t压："
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200V-500V"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/dy"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="充电单价："
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.00元/时"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/PowerAmount"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="辅源类型："
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12V"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/fz_type"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="时\t\t\t\t段："
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00-24:00"
+                        android:textColor="@color/nomalText"
+                        android:textSize="14sp"
+                        android:id="@+id/clock"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_go_Recharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/press_white_gray_change"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户余额："
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/nomalText"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0.00元"
+                    android:textColor="@color/nomalText"
+                    android:textSize="13sp"
+                    android:id="@+id/balance"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="去充值"
+                    android:textColor="@color/hintColor"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_charging_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/press_white_gray_change"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="计费标准："
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/nomalText"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="按起步价计费  功率"
+                    android:textColor="@color/hintColor"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_fault_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/press_white_gray_change"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="故障报错："
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/nomalText"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="如遇问题，点击此处"
+                    android:textColor="@color/hintColor"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="充电时长"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:textColor="@color/nomalText"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"/>
+
+            <com.tangchaoke.electrombilechargingpile.view.NiceRecyclerView
+                android:id="@+id/nrv_charge_type"
+                android:padding="5dp"
+                android:background="@color/white"
+                app:listDirection="HORIZONTAL"
+                app:gridNum="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_auto"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="智能充满"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_2hour"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="2小时"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_4hour"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="4小时"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_6hour"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="6小时"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_8hour"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="8小时"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_10hour"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_yellow_selector_5"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="10小时"
+                        android:textColor="@color/gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RadioGroup
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_one_hour"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow_selector_5"
+                    android:checked="true"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:button="@null"
+                    android:text="1小时"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_two_hour"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow_selector_5"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/hintColor"
+                    android:layout_marginRight="10dp"
+                    android:button="@null"
+                    android:text="2小时"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_three_hour"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow_selector_5"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/hintColor"
+                    android:layout_marginRight="10dp"
+                    android:button="@null"
+                    android:text="3小时"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rb_four_hour"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow_selector_5"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/hintColor"
+                    android:button="@null"
+                    android:text="4小时"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="充电方式：立即充电"
+                    android:textColor="@color/nomalText"
+                    android:textSize="13sp"
+                    android:id="@+id/chargingmode"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/qiangwei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="选择枪位：A枪"
+                    android:textColor="@color/nomalText"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/jump_right_gray" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请连接后刷新页面"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/hintColor"
+            android:textSize="13sp"
+            android:visibility="gone"
+            android:id="@+id/lay_fh"/>
+
+        <Button
+            android:id="@+id/but_ok"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_padding_yellow_5"
+            android:text="立即充电"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

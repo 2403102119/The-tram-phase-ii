@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.tangchaoke.electrombilechargingpile"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            aaptOptions.cruncherEnabled = false
+
+            aaptOptions.useNewCruncher = false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url 'https://jitpack.io' }
+        }
+
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    compile 'com.android.support:support-v4:27.1.1'
+//    implementation files('libs/okhttputils3.jar')
+//    implementation files('libs/okhttp-3.0.1.jar')
+    compile 'com.squareup.okio:okio:1.5.0'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation files('libs/AMap3DMap_6.2.0_AMapSearch_6.1.0_20180427.jar')
+    compile 'com.mylhyl:acp:1.2.0'
+    compile 'com.google.zxing:core:3.3.0'
+//    implementation 'com.zaaach:citypicker:2.0.1'
+    implementation files('libs/AMap_Location_V4.0.1_20180426.jar')
+    compile 'com.github.addappcn:android-pickers:1.0.3'
+    compile 'com.google.code.gson:gson:2.6.2'
+    implementation 'com.alibaba:fastjson:1.2.44'
+    compile(name: 'SmartRefreshLayout-1.0.3', ext: 'aar')
+//    compile 'com.qiniu:qiniu-android-sdk:7.3.15'
+//    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile files('libs/jcore-android-1.2.0.jar')
+    compile files('libs/jpush-android-3.1.2.jar')
+    compile files('libs/alipaySdk-20170922.jar')
+    implementation files('libs/wechat-sdk-android-with-mta-1.4.0.jar')
+}

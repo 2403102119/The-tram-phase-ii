@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义MLImageView的属性-->
+    <declare-styleable name="MLImageView">
+        <attr name="press_alpha" format="integer" />
+        <attr name="press_color" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="shape_type" format="enum">
+            <enum name="round" value="0" />
+            <enum name="rectangle" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--星星-->
+    <declare-styleable name="RatingBar">
+        <!--尺寸值-->
+        <attr name="starImageSize" format="dimension" />
+        <!--星星间距-->
+        <attr name="starPadding" format="dimension" />
+        <!--星星总数-->
+        <attr name="starCount" format="integer" />
+        <!--空白的星星资源文件值-->
+        <attr name="starEmpty" format="reference" />
+        <!--满星资源文件值-->
+        <attr name="starFill" format="reference" />
+        <!--半星资源文件值-->
+        <attr name="starHalf" format="reference" />
+        <!--是否可点击boolean值-->
+        <attr name="clickable" format="boolean" />
+        <!--当前进度float值-->
+        <attr name="starStep" format="float" />
+        <!--每次进度方式的值，整星还是半星-->
+        <attr name="stepSize">
+            <enum name="Half" value="0" />
+            <enum name="Full" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NiceRecyclerView">
+        <!--RecyclerView 是listview还是gridview-->
+        <attr name="listDirection">
+            <!--gridview-->
+            <enum name="HORIZONTAL" value="0" />
+            <!--listview-->
+            <enum name="VERTICAL" value="1" />
+        </attr>
+        <!--为空提示语第一次是否显示-->
+        <attr name="isFirstShowEmptyText" format="boolean" />
+        <!--列表为空提示语-->
+        <attr name="emptyText" format="string" />
+        <!--列表为空提示语-->
+        <attr name="isShowEmptyText" format="boolean"/>
+        <!--gridview每行显示数量-->
+        <attr name="gridNum" format="integer"/>
+        <!--是否显示为空图片-->
+        <attr name="showEmptyImg" format="boolean" />
+        <!--为空图片宽度-->
+        <attr name="imgWidth" format="dimension"/>
+        <!--为空图片高度-->
+        <attr name="imgHeight" format="dimension" />
+        <!--为空文字padding-->
+        <attr name="txtPadding" format="dimension" />
+        <!--为空文字图片间距-->
+        <attr name="txtImgPadding" format="dimension" />
+        <!--为空文字大小-->
+        <attr name="txtSize" format="dimension" />
+    </declare-styleable>
+
+    <!--corner_color 边角颜色，
+        scanner_color 扫描线颜色
+        possible_result_color 扫描点颜色
+        frame_color 扫描框边线颜色
+        mask_color 模糊区域颜色
+        label_text  框上方提示
+    -->
+    <declare-styleable name="ViewfinderView">
+        <attr name="corner_color" format="color" />
+        <attr name="laser_color" format="color" />
+        <attr name="frame_color" format="color" />
+        <attr name="mask_color" format="color" />
+        <attr name="result_point_color" format="color" />
+        <attr name="result_color" format="color" />
+        <attr name="label_text_color" format="color" />
+        <attr name="label_text" format="string" />
+        <attr name="label_text_size" format="float" />
+    </declare-styleable>
+
+    <!--圆形进度条-->
+    <declare-styleable name="MyRoundProcess">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="textColors" format="color" />
+        <attr name="textSize" format="dimension" />
+        <!-- 圆环的宽度 -->
+        <attr name="circleWidth" format="dimension" />
+    </declare-styleable>
+    <!--圆形进度条2-->
+    <declare-styleable name="MyMarkerRoundProcess">
+        <attr name="roundColor2" format="color"/>
+        <attr name="roundProgressColor2" format="color"/>
+        <attr name="roundProgressColor3" format="color"/>
+        <attr name="textColors2" format="color" />
+        <attr name="textSize2" format="dimension" />
+        <!-- 圆环的宽度 -->
+        <attr name="circleWidth2" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+</resources>

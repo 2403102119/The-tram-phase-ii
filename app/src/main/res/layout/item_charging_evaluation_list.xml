@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginBottom="15dp"
+        android:background="@color/lineGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="39dp"
+            android:layout_height="39dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="浪OK"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:id="@+id/name"/>
+
+                <com.tangchaoke.electrombilechargingpile.view.RatingBar
+                    android:id="@+id/stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:stepSize="1"
+                    app:starImageSize="12dp"
+                    app:starPadding="7dp"
+                    app:starEmpty="@mipmap/ic_rationgbar_no"
+                    app:starFill="@mipmap/ic_rationgbar_yes"
+                    app:clickable="false"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2017-04-15 20:30"
+                android:textColor="@color/hintColor"
+                android:textSize="11sp"
+                android:id="@+id/ctime"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="充电很快，服务好，用着效果特别棒"
+                android:textColor="@color/nomalText"
+                android:textSize="14sp"
+                android:id="@+id/content"/>
+
+            <com.tangchaoke.electrombilechargingpile.view.NiceRecyclerView
+                android:id="@+id/rv_item_evaluation_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:gridNum="3"
+                app:listDirection="HORIZONTAL" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

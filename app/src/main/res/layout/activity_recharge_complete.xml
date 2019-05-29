@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activity.RechargeCompleteActivity">
+
+    <com.tangchaoke.electrombilechargingpile.view.MLImageView
+        android:src="@mipmap/recharge_complete"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:text="充值完成"/>
+
+    <TextView
+        android:text="100.00元"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/nomalText"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/but_ok"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_padding_yellow_25"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>
